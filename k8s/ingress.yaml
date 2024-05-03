@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portifolio
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: junior.costin.com.br
+    http: 
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: portifolio
+            port:
+              number: 80
